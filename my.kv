@@ -1,0 +1,118 @@
+WindowManager:
+    Add_User:
+    View_User:
+
+<Add_User>:
+    name: "add"
+
+    namee: namee
+    address: address
+    contact: contact
+    salary: salary
+
+    FloatLayout:
+        cols:1
+
+        FloatLayout:
+            size: root.width, root.height
+
+            Label:
+                text: "Name: "
+                size_hint: 0.2, 0.07
+                pos_hint: {"x":0.2, "top":0.9}
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            TextInput:
+                id: namee
+                multiline: False
+                size_hint: 0.5, 0.07
+                pos_hint: {"x":0.4, "top":0.9}
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            Label:
+                text: "Address: "
+                size_hint: 0.2, 0.07
+                pos_hint: {"x":0.2, "top":0.78}
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            TextInput:
+                id: address
+                multiline: False
+                size_hint: 0.5, 0.07
+                pos_hint: {"x":0.4, "top":0.78}
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            Label:
+                text: "Contact: "
+                size_hint: 0.2, 0.07
+                pos_hint: {"x":0.2, "top":0.66}
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            TextInput:
+                id: contact
+                multiline: False
+                size_hint: 0.5, 0.07
+                pos_hint: {"x":0.4, "top":0.66}
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            Label:
+                text: "Salary: "
+                size_hint: 0.2, 0.07
+                pos_hint: {"x":0.2, "top":0.54}
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            TextInput:
+                id: salary
+                multiline: False
+                size_hint: 0.5, 0.07
+                pos_hint: {"x":0.4, "top":0.54}
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            Button:
+                text: "Add User"
+                size_hint: 0.2, 0.1
+                pos_hint: {"x":0.3, "top":0.32}
+                font_size: (root.width**2 + root.height**2) / 14**4
+                on_release:
+                    #app.root.current = "view"
+                    root.adduser()
+                    root.manager.transition.direction = "left"
+
+
+            Button:
+                text: "View Users"
+                size_hint: 0.2, 0.1
+                pos_hint: {"x":0.6, "top":0.32}
+                font_size: (root.width**2 + root.height**2) / 14**4
+                on_release:
+                    app.root.current = "view"
+                    root.manager.transition.direction = "left"
+                    
+<View_User>:
+    name: "view"
+    GridLayout:
+        cols: 1
+        ScrollView:
+            GridLayout:
+                id: container_y
+                size_hint_y: None
+                cols: 4
+                row_default_height: root.height*0.1
+                height: self.minimum_height
+        
+        Button:
+            id: delete_btn
+            size_hint: 0.2, 0.1
+            pos_hint: {"x":0.8, "top":0.8}
+
+        Button:
+            id: edit_btn
+            size_hint: 0.2, 0.1
+            pos_hint: {"x":0.8, "top":0.6}
+
+                
+
+
+
+
+        
